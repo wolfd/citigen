@@ -11,9 +11,10 @@ package com.wolf.city;
  * @version Jan 21, 2014
  */
 public class City {
-
+    RoadStorage roads;
+    
     /**
-     * 
+     * Constructs a new City
      */
     public City() {
         // TODO Auto-generated constructor stub
