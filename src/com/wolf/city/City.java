@@ -3,6 +3,8 @@
  */
 package com.wolf.city;
 
+import com.wolf.city.natural.Environment;
+
 /**
  * City contains the data storage for a city, as well as the main method for
  * generating a city.
@@ -11,7 +13,10 @@ package com.wolf.city;
  * @version Jan 21, 2014
  */
 public class City {
-    RoadStorage roads;
+    //TODO
+    public RoadStorage roads;
+    public Environment env;
+    private CityBuilder cityBuilder;
     
     /**
      * Constructs a new City

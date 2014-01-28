@@ -1,6 +1,5 @@
-package com.wolf.city;
+package com.wolf.city.util;
 
-import com.wolf.city.util.Vector3d;
 
 /**
  * SampleMap is an interface for 2D noise and 2D images for returning values
@@ -13,19 +12,19 @@ public interface SampleMap {
     /**
      * Finds the gradient of the map.
      * 
-     * @param position
-     *            the position to find gradient of
-     * @return the gradient vector
+     * @param x position to sample
+     * @param y position to sample
+     * @return the gradient vector at the sample point
      */
-    public Vector3d gradient(Vector3d position);
+    public Vector3d gradient(double x, double y);
 
     /**
      * Gets the value of the map at a position. Should, but does not need to be
      * (0 to 1].
      * 
-     * @param position
-     *            to sample
+     * @param x position to sample
+     * @param y position to sample
      * @return the value of the map
      */
-    public double value(Vector3d position);
+    public double value(double x, double y);
 }
