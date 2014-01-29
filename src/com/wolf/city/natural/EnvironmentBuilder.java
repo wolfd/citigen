@@ -10,5 +10,5 @@ package com.wolf.city.natural;
  * @version Jan 28, 2014
  */
 public class EnvironmentBuilder {
-    //TODO
+    //TODO create EnvironmentBuilder class
 }

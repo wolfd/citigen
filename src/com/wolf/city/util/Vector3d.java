@@ -27,12 +27,12 @@ public class Vector3d {
     }
 
     public String toString() {
-        // TODO
+        // TODO toString for Vector3d
         return "";
     }
 
     public int hashCode() {
-        // TODO
+        // TODO hashCode for Vector3d
         return 0;
     }
 

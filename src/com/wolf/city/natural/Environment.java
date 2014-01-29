@@ -24,5 +24,5 @@ public class Environment {
         environmentBuilder = new EnvironmentBuilder();
     }
     
-    //TODO
+    //TODO fill out Environment class
 }

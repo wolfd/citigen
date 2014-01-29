@@ -42,12 +42,12 @@ public class RoadGraph implements RoadStorage {
     }
 
     public String toString(){
-        //TODO
+        //TODO toString for RoadGraph
         return "";
     }
     
     public int hashCode(){
-        //TODO
+        //TODO hashCode for RoadGraph
         return 0;
     }
 }

@@ -10,6 +10,10 @@ import java.util.Random;
  */
 public class FBM implements SampleMap {
     /**
+     * for calculating gradient, sample distance from point
+     */
+    private static final double gradDelta = .1d;
+    /**
      * scales down all layers by value
      */
     private double delta = 16;
@@ -126,22 +130,28 @@ public class FBM implements SampleMap {
         return (total + 1) / 2;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see com.wolf.city.util.SampleMap#gradient(double, double)
      */
     @Override
     public Vector3d gradient(double x, double y) {
-        // TODO Auto-generated method stub
-        return null;
+        double dx =
+                (value(x - gradDelta, y) - value(x + gradDelta, y))
+                        / (2d * gradDelta);
+        double dy =
+                (value(x, y - gradDelta) - value(x, y + gradDelta))
+                        / (2d * gradDelta);
+        return new Vector3d(dx, dy, 0);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
      * @see com.wolf.city.util.SampleMap#value(double, double)
      */
     @Override
     public double value(double x, double y) {
-        // TODO Auto-generated method stub
-        return 0;
+        return noise(x, y);
     }
 
 }

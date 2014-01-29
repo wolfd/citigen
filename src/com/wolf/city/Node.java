@@ -63,12 +63,12 @@ public class Node {
     }
 
     public String toString() {
-        // TODO
+        // TODO toString for Nodes
         return "";
     }
 
     public int hashCode() {
-        // TODO
+        // TODO hashCode for Nodes
         return 0;
     }
 }

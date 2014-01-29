@@ -15,7 +15,7 @@ import com.wolf.city.util.PriorityQueue;
  * @version Jan 28, 2014
  */
 public class CityBuilder {
-    //TODO
+    //TODO fill out CityBuilder class
     PriorityQueue<Road> q;
     City parent;
     

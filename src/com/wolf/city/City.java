@@ -13,7 +13,7 @@ import com.wolf.city.natural.Environment;
  * @version Jan 21, 2014
  */
 public class City {
-    //TODO
+    //TODO fill out City class
     public RoadStorage roads;
     public Environment env;
     private CityBuilder cityBuilder;

@@ -3,6 +3,7 @@
  */
 package com.wolf.city.natural;
 
+import com.wolf.city.util.FBM;
 import com.wolf.city.util.SampleMap;
 import com.wolf.city.util.Vector3d;
 
@@ -13,32 +14,24 @@ import com.wolf.city.util.Vector3d;
  * @version Jan 28, 2014
  */
 public class Terrain implements SampleMap {
-    //TODO
+    private static final int octaves = 6;
+    private FBM sample;
+
     /**
      * Constructs a Terrain object with a random position
      */
-    public Terrain() {
-        // TODO Auto-generated constructor stub
-    }
-    
-    /**
-     * Constructs a Terrain object centered at a position
-     * @param position
-     */
-    public Terrain(Vector3d position, long seed){
-        
+    public Terrain(long seed) {
+        sample = new FBM(octaves, seed);
     }
 
     @Override
     public Vector3d gradient(double x, double y) {
-        // TODO Auto-generated method stub
-        return null;
+        return sample.gradient(x, y);
     }
 
     @Override
     public double value(double x, double y) {
-        // TODO Auto-generated method stub
-        return 0;
+        return sample.value(x, y);
     }
 
 }
