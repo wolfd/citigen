@@ -17,7 +17,7 @@ public class CityBuilder {
   City parent;
 
   /**
-   * Constructs a CityBuilder object, and calls methods to begin a procedural's
+   * Constructs a CityBuilder object, and calls methods to begin procedural
    * development.
    */
   public CityBuilder() {

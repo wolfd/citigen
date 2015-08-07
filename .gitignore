@@ -1,2 +1,4 @@
 /bin
 .idea/
+target/
+dependency-reduced-pom.xml

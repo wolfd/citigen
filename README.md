@@ -20,3 +20,10 @@ foremost reasons I am undertaking this project is to have practice using
 techniques I am currently learning in university.
 
 [1]: http://people.ee.ethz.ch/~pascmu/documents/procedural_modeling_of_cities__siggraph2001.pdf
+
+
+## Running
+```
+mvn clean package
+java -jar target/citigen-1.0-SNAPSHOT.jar server city-server.yml
+```
