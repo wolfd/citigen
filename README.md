@@ -27,3 +27,44 @@ techniques I am currently learning in university.
 mvn clean package
 java -jar target/citigen-1.0-SNAPSHOT.jar server city-server.yml
 ```
+
+
+Notes:
+
+- Order road generation to be approximately:
+  - Preselect seed areas
+  - (Generate big roads)
+  - Use A* to find best path between seeds -> bump those up to highways
+  - Generate offramps/cloverleafs
+  - Generate smaller roads
+
+Highways are difficult, and require special methods of going over/under
+Generally are built after basic roads have been developed
+Generally run into/out of city or radially around them
+Sometimes bulldoze roads, sometimes leave them be (depending on road traffic)
+
+Road intersection
+  - Roads rectangles are tested first
+  - If the rectangles intersect, full parallelpiped test is done
+
+Road generation happens in 3D
+  - roads have heights and don't interact with things outside of their ranges
+  - roads try to follow ground level unless the slope is too high
+    - roads will follow maximum allowed slope
+    - if below ground, needs to be at least road height to be a tunnel
+    - if above ground, road will be on top of land unless high up or above road
+
+Multithreading
+- Need singleton that manages calls to random number generator
+  - road generation can be parallelized
+  - road filtering must happen one at a time
+
+Road queue
+  Batch roads by n, figure out grid squares used by each, 
+  road gets popped
+  road gets random seed from random seed singleton
+  road can be generated in parallel, but filters that require outside data cannot be run
+  roads must be added to the road map in the same order that they are popped
+    when a road is done processing, put it in it's place in the queue to be added
+    road filtering can happen in parallel if the roads are not within a certain radius of already processing roads
+  roads are added in order as they are done
