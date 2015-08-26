@@ -12,7 +12,7 @@ public class RoadStorageImpl implements RoadStorage {
   private final List<Road> roads;
 
   public RoadStorageImpl() {
-    this.roads = new ArrayList<Road>();
+    this.roads = new ArrayList<>();
   }
 
   /**
